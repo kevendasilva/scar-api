@@ -15,6 +15,10 @@ gem "puma", "~> 5.0"
 # Use cors accept requests from a different origin
 gem "rack-cors"
 
+# Use devise for users authentication
+gem "devise"
+gem "devise-jwt"
+
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 # gem "jbuilder"
 
