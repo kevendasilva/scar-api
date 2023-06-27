@@ -1,0 +1,14 @@
+# Git
+.git
+.gitignore
+.gitattributes
+
+# Docker
+.dockerignore
+
+# Repository
+.env
+README.md
+run
+LICENSE
+user_api_scar.postman_collection.json
