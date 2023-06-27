@@ -1,7 +1,7 @@
 class UpdatesController < ApplicationController
   # GET /updates
   def index
-    @updates = Update.all
+    @updates = Update.where(door_lock_id: update_params[:door_lock_id])
   end
 
   # POST /updates
