@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_27_030410) do
+ActiveRecord::Schema[7.0].define(version: 2023_06_27_032849) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -27,7 +27,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_27_030410) do
 
   create_table "door_locks", force: :cascade do |t|
     t.string "name"
-    t.boolean "open"
+    t.boolean "open", default: false
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
