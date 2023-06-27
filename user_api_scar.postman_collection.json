@@ -1,0 +1,727 @@
+{
+	"info": {
+		"_postman_id": "e0b6b93d-3032-46c7-aa24-de3d683a4e04",
+		"name": "User API - SCAR",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27076315"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "2. Create User Fail",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{{CreateUser}}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Address}}/sign_up",
+							"host": [
+								"{{Address}}"
+							],
+							"path": [
+								"sign_up"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "1. Create User Success",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{{CreateUser}}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Address}}/sign_up",
+							"host": [
+								"{{Address}}"
+							],
+							"path": [
+								"sign_up"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "4. Current User",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{Address}}/current_user",
+							"host": [
+								"{{Address}}"
+							],
+							"path": [
+								"current_user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "3. Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{{CurrentUser}}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Address}}/login",
+							"host": [
+								"{{Address}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "6. Logout",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{Address}}/logout",
+							"host": [
+								"{{Address}}"
+							],
+							"path": [
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "5. Update User",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user\": {\r\n        \"name\": \"User Sterco\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Address}}/sign_up",
+							"host": [
+								"{{Address}}"
+							],
+							"path": [
+								"sign_up"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "7. Delete User",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{Address}}/sign_up",
+							"host": [
+								"{{Address}}"
+							],
+							"path": [
+								"sign_up"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "DoorLocks",
+			"item": [
+				{
+					"name": "1. Index",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{Address}}/door_locks",
+							"host": [
+								"{{Address}}"
+							],
+							"path": [
+								"door_locks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "2. Create Door Lock",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"door_lock\": {\r\n        \"name\": \"Tardis\",\r\n        \"open\": false,\r\n        \"user_id\": {{CurrentUserID}}\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Address}}/door_locks",
+							"host": [
+								"{{Address}}"
+							],
+							"path": [
+								"door_locks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "4. Edit Door Lock",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"door_lock\": {\r\n        \"open\": true\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Address}}/door_locks/1",
+							"host": [
+								"{{Address}}"
+							],
+							"path": [
+								"door_locks",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "5. Edit Door Lock",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"door_lock\": {\r\n        \"open\": false\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Address}}/door_locks/1",
+							"host": [
+								"{{Address}}"
+							],
+							"path": [
+								"door_locks",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "3. Show Door Lock",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{Address}}/door_locks/1",
+							"host": [
+								"{{Address}}"
+							],
+							"path": [
+								"door_locks",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "6. Delete Door Lock",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{Address}}/door_locks/2",
+							"host": [
+								"{{Address}}"
+							],
+							"path": [
+								"door_locks",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Clients",
+			"item": [
+				{
+					"name": "1. Index",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"client\": {\r\n        \"door_lock_id\": 1\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Address}}/clients",
+							"host": [
+								"{{Address}}"
+							],
+							"path": [
+								"clients"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "2. Create Client",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"client\": {\r\n        \"name\": \"Doctor\",\r\n        \"key\": \"awdjawjidaiwdpaw\",\r\n        \"key_type\": \"card\",\r\n        \"allowed\": \"false\",\r\n        \"door_lock_id\": 1\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Address}}/clients",
+							"host": [
+								"{{Address}}"
+							],
+							"path": [
+								"clients"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "4. Edit Client",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"client\": {\r\n        \"allowed\": true\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Address}}/clients/1",
+							"host": [
+								"{{Address}}"
+							],
+							"path": [
+								"clients",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "5. Edit Client",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"client\": {\r\n        \"allowed\": false\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Address}}/clients/1",
+							"host": [
+								"{{Address}}"
+							],
+							"path": [
+								"clients",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "3. Show Client",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{Address}}/clients/1",
+							"host": [
+								"{{Address}}"
+							],
+							"path": [
+								"clients",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "6. Delete Client",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{Address}}/clients/1",
+							"host": [
+								"{{Address}}"
+							],
+							"path": [
+								"clients",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Updates",
+			"item": [
+				{
+					"name": "1. Index",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"update\": {\r\n        \"door_lock_id\": 1\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Address}}/updates",
+							"host": [
+								"{{Address}}"
+							],
+							"path": [
+								"updates"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "2. Create Update",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"update\": {\r\n        \"key_type\": \"card\",\r\n        \"person_name\": \"*Automático\",\r\n        \"open\": false,\r\n        \"door_lock_id\": 1\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Address}}/updates",
+							"host": [
+								"{{Address}}"
+							],
+							"path": [
+								"updates"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Search",
+			"item": [
+				{
+					"name": "Find Client By Key",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"client\": {\r\n        \"key\": \"awdjawjidaiwdpaw\",\r\n        \"door_lock_id\": 1\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Address}}/search/client_by_key",
+							"host": [
+								"{{Address}}"
+							],
+							"path": [
+								"search",
+								"client_by_key"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "CreateUser",
+			"value": "{\n    \"user\": {\n        \"email\": \"user@scar.co\",\n        \"password\": \"password\",\n        \"name\": \"User\"\n    }\n}",
+			"type": "string"
+		},
+		{
+			"key": "Address",
+			"value": "localhost:3000",
+			"type": "string"
+		},
+		{
+			"key": "CurrentUser",
+			"value": "{\n    \"user\": {\n        \"email\": \"user@scar.co\",\n        \"password\": \"password\",\n        \"name\": \"User\"\n    }\n}",
+			"type": "string"
+		},
+		{
+			"key": "Token",
+			"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI0ZDFiNmMzNS01NDJmLTRhZGItYTk0Ny0zMjg0MjFiZjBiMjEiLCJzdWIiOiIxIiwic2NwIjoidXNlciIsImF1ZCI6bnVsbCwiaWF0IjoxNjg3Nzk0NTY0LCJleHAiOjE2ODkwOTA1NjR9.sfeg0OKDj-KXyXimp4StfPIF1BXCSzE2RN99XJiNW4A",
+			"type": "string"
+		},
+		{
+			"key": "CurrentUserID",
+			"value": "2",
+			"type": "string"
+		}
+	]
+}
