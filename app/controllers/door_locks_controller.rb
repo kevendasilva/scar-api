@@ -3,11 +3,12 @@ class DoorLocksController < ApplicationController
 
   # GET /door_locks
   def index
-    @door_locks = DoorLock.all
+    @door_locks = DoorLock.where(user_id: current_user.id)
   end
 
   # GET /door_locks/1
   def show
+    @last_updates_limit = 3
   end
 
   # POST /door_locks
