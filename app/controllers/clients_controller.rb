@@ -3,7 +3,7 @@ class ClientsController < ApplicationController
 
   # GET /clients
   def index
-    @clients = Client.all
+    @clients = Client.where(door_lock_id: client_params[:door_lock_id])
   end
 
   # GET /clients/1
