@@ -31,5 +31,7 @@ Rails.application.routes.draw do
     # Updates
     get    '/updates',     to: 'updates#index',   as: :updates
     post   '/updates',     to: 'updates#create',  as: nil
+    # Search
+    get    '/search/client_by_key', to: 'search#client_by_key', as: nil
   end
 end
