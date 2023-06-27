@@ -1,0 +1,1 @@
+json.extract! @client, :id, :name, :key, :key_type, :allowed, :door_lock_id, :created_at, :updated_at

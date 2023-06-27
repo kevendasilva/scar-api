@@ -21,5 +21,12 @@ Rails.application.routes.draw do
     patch  '/door_locks/:id', to: 'door_locks#update',  as: nil
     put    '/door_locks/:id', to: 'door_locks#update',  as: nil
     delete '/door_locks/:id', to: 'door_locks#destroy', as: nil
+    # Clients
+    get    '/clients',     to: 'clients#index',   as: :clients
+    post   '/clients',     to: 'clients#create',  as: nil
+    get    '/clients/:id', to: 'clients#show',    as: :client
+    patch  '/clients/:id', to: 'clients#update',  as: nil
+    put    '/clients/:id', to: 'clients#update',  as: nil
+    delete '/clients/:id', to: 'clients#destroy', as: nil
   end
 end
