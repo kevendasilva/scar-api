@@ -10,8 +10,16 @@ Rails.application.routes.draw do
     post   '/sign_up',  to: 'users/registrations#create', as: nil
     patch  '/sign_up',  to: 'users/registrations#update', as: :user_registration
   end
-
+  
   authenticate do
+    # Current User
     get '/current_user', to: 'current_user#index', as: nil
+    # Door Locks
+    get    '/door_locks',     to: 'door_locks#index', as: :door_locks
+    post   '/door_locks',     to: 'door_locks#create', as: nil
+    get    '/door_locks/:id', to: 'door_locks#show', as: :door_lock
+    patch  '/door_locks/:id', to: 'door_locks#update', as: nil
+    put    '/door_locks/:id', to: 'door_locks#update', as: nil
+    delete '/door_locks/:id', to: 'door_locks#destroy', as: nil
   end
 end
