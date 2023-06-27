@@ -28,5 +28,8 @@ Rails.application.routes.draw do
     patch  '/clients/:id', to: 'clients#update',  as: nil
     put    '/clients/:id', to: 'clients#update',  as: nil
     delete '/clients/:id', to: 'clients#destroy', as: nil
+    # Updates
+    get    '/updates',     to: 'updates#index',   as: :updates
+    post   '/updates',     to: 'updates#create',  as: nil
   end
 end
